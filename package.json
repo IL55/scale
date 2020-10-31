@@ -10,8 +10,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@remobile/react-native-toast": "^1.0.7",
     "react": "16.13.1",
-    "react-native": "0.63.3"
+    "react-native": "0.63.3",
+    "react-native-bluetooth-classic": "^0.10.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
