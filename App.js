@@ -1,21 +1,10 @@
 // In App.js in a new project
 
-import * as React from 'react';
-import {View, Text, Button} from 'react-native';
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-
-const HomeScreen = ({navigation}) => {
-  return (
-    <Button
-      title="Go to Jane's profile"
-      onPress={() => navigation.navigate('Profile', {name: 'Jane'})}
-    />
-  );
-};
-const ProfileScreen = () => {
-  return <Text>This is Jane's profile</Text>;
-};
+import {BluetoothScreen} from './components/screens/BluetoothScreen';
+import {MainScreen} from './components/screens/MainScreen';
 
 const Stack = createStackNavigator();
 
@@ -23,10 +12,14 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{
-          header: () => null,
-        }}/>
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen
+          name="MainScreen"
+          component={MainScreen}
+          options={{
+            header: () => null,
+          }}
+        />
+        <Stack.Screen name="Bluetooth" component={BluetoothScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
